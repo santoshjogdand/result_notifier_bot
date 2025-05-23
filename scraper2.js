@@ -14,7 +14,7 @@ const scraper = async () =>{
     let res = null
     const $ = cheerio.load(html);
     // console.log("Page Title:", $("title").text());
-      for(let i = 0; i < 5; i++){
+      for(let i = 1; i < 5; i++){
         res = $('table tr').eq(i).find('td').eq(1).text().trim()
         // if(res.contains(''))
       }
