@@ -3,6 +3,7 @@ import axios from "axios";
 import * as cheerio from "cheerio";
 import dotenv from "dotenv";
 import { sendTelegramMessage } from "./telegram.js";
+import scraper from './scraper2.js'
 
 dotenv.config();
 
@@ -32,5 +33,8 @@ export async function scrapSite() {
 
 (async () => {
   const result = await scrapSite();
+  const result2 = await scraper();
   await sendTelegramMessage(result);
+  await sendTelegramMessage(result2 + " SPPU");
+  
 })();
